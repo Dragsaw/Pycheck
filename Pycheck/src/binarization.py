@@ -1,4 +1,4 @@
-from PIL import Image
+﻿from PIL import Image
 from PIL import ImageStat
 from PIL import ImageEnhance
 from PIL import ImageOps
@@ -6,8 +6,7 @@ from PIL import ImageOps
 def binarize(image):
     ''' Binarizes the image. '''
     grayscale = image.convert('L')
-    equalized = ImageOps.equalize(grayscale)
-    enhanced_image = _enhance(equalized)
+    enhanced_image = _enhance(grayscale)
     return _convert_to_binary(enhanced_image)
 
 def _enhance(image):

@@ -26,6 +26,12 @@
     <Compile Include="src\binarization.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\hough_algorithm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\PageNotFoundException.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\processor.py">
       <SubType>Code</SubType>
     </Compile>

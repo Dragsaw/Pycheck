@@ -38,6 +38,9 @@
     <Compile Include="src\processor.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\extractor.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\rotation.py">
       <SubType>Code</SubType>
     </Compile>

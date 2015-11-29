@@ -7,13 +7,16 @@ def rotate(image):
     ''' Tries to straighten the image. '''
     _setup_module_variables(image)
     angle = _get_rotation_angle()
-    print(angle)
-    image.rotate(angle).save("E:\\4.bmp")
+    result = Image.new('RGBA', image.size, 'white')
+    rgba = image.convert('RGBA')
+    rot = rgba.rotate(angle)
+    result.paste(rot, mask=rot)
+    return result.convert("1")
 
 def _get_rotation_angle():
     ''' Calculates rotation angle. '''
     line_point = (-1,-1)
-    x, y = image.width, 0
+    x, y = image.width, 0 + vertical_step
     while line_point == (-1, -1):
         page_point = _find_page_point(x - horizontal_step, y)
         line_point = _find_line_point(page_point)

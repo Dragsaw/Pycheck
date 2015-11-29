@@ -1,4 +1,4 @@
-from math import cos, sin, tan, pi
+﻿from math import cos, sin, tan, pi
 
 def hough(image, coordinates):
     ''' Hough algorithm for detecting lines. '''
@@ -7,7 +7,7 @@ def hough(image, coordinates):
     angle_equation = lambda x: round(x * tan(angle * pi / 180))
     steps = int(image.width // 2)
     while angle < 190:
-        angle += 0.01
+        angle += 0.1
         blacks = 0
         for x in range(0, steps):
             y = angle_equation(x)

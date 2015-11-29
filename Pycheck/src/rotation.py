@@ -1,7 +1,7 @@
 ﻿from PIL import Image
 from PIL import ImageDraw
-import src.PageNotFoundException as PageExc
 from src.hough_algorithm import hough
+from src.classes import PageNotFoundException
 
 def rotate(image):
     ''' Tries to straighten the image. '''
@@ -27,7 +27,7 @@ def _find_page_point(x, y):
     initial_x = x
     while not is_page_point(x, y):
         if y > vertical_limit:
-            raise PageExc.PageNotFoundException("Couldn't find a page on the image.")
+            raise PageNotFoundException("Couldn't find a page on the image.")
         if x > horizontal_limit:
             x = x - horizontal_step
         else:

@@ -1,9 +1,11 @@
-from PIL import Image
+﻿from PIL import Image
 from src.classes import Area, Number
+from src.constants import HEIGHT, WIDTH
 
 def get_sums(image):
     line = _get_sum_bottom_line(image)
     sums = _extract_rows(image, line)
+    _equalize_digit_images(sums)
     return sums
 
 def _get_sum_bottom_line(image):
@@ -113,3 +115,21 @@ def _break_to_digits(image):
         else:
             digit_length += 1
     return digits
+
+def _equalize_digit_images(sums):
+    max_width = _get_max_width(sums)
+    height = sums[0].digits[0].height
+    for s in sums:
+        for d in range(0, len(s.digits)):
+            new_image = Image.new('1', (max_width, height), 'white')
+            new_image.paste(s.digits[d], (0,0))
+            s.digits[d] = new_image.resize((WIDTH, HEIGHT))
+
+def _get_max_width(sums):
+    max_width = 0
+    for s in sums:
+        s.digits = s.digits[3:]
+        for d in s.digits:
+            if d.width > max_width:
+                max_width = d.width
+    return max_width

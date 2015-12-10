@@ -22,6 +22,17 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="libs\perceptron\Addressable.py" />
+    <Compile Include="libs\perceptron\Pyceptron.py" />
+    <Compile Include="libs\perceptron\Sensor.py" />
+    <Compile Include="libs\perceptron\Test.py" />
+    <Compile Include="libs\perceptron\WeightForEachClassResolverBlock.py" />
+    <Compile Include="libs\perceptron\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="libs\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Pycheck.py" />
     <Compile Include="src\binarization.py">
       <SubType>Code</SubType>
@@ -44,6 +55,9 @@
     <Compile Include="src\extractor.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\resolver.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\rotation.py">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +66,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="libs\" />
+    <Folder Include="libs\perceptron\" />
     <Folder Include="src\" />
   </ItemGroup>
   <PropertyGroup>
